@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlen.c                                           :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/05 17:01:36 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/05 17:01:36 by marvin           ###   ########.fr       */
+/*   Created: 2024/10/12 01:00:43 by marvin            #+#    #+#             */
+/*   Updated: 2024/10/12 01:00:43 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_strlen(char *str)
+char	*ft_strnstr(const char *s, const char *to_find, size_t n)
 {
-    int i;
+	unsigned int	pos;
+	unsigned int	i;
 
-    i = 0;
-    while ( str[i] != '\0')
-    {
-        i++;
-    }
-    return (i);
+	if (!*to_find)
+		return ((char *)s);
+	pos = 0;
+	while (s[pos] && (size_t)pos < n)
+	{
+		if (s[pos] == to_find[0])
+		{
+			i = 1;
+			while (to_find[i] && s[pos + i] == to_find[i]
+				&& (size_t)(pos + i) < n)
+				i++;
+			if (to_find[i] == '\0')
+				return ((char *)&s[pos]);
+		}
+		pos++;
+	}
+	return (NULL);
 }

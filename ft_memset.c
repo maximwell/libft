@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlen.c                                           :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/05 17:01:36 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/05 17:01:36 by marvin           ###   ########.fr       */
+/*   Created: 2024/10/10 02:19:13 by marvin            #+#    #+#             */
+/*   Updated: 2024/10/10 02:19:13 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int strlen(char *str)
-{
-    int i;
+#include <libft.h>
 
-    i = 0;
-    while ( str[i] != '\0')
-    {
-        i++;
+void *ft_memset(void *s, int c, size_t n) {
+    unsigned char *ptr = (unsigned char *)s;
+    while (n--) {
+        *ptr++ = (unsigned char)c;
     }
-    return (i);
+    return s;
 }

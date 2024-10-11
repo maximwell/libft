@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isalnum.c                                          :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/05 16:58:34 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/05 16:58:34 by marvin           ###   ########.fr       */
+/*   Created: 2024/10/11 02:07:07 by marvin            #+#    #+#             */
+/*   Updated: 2024/10/11 02:07:07 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef LIBFT_H
+# define LIBFT_H
+
+# include <string.h>
+# include <stdlib.h>
+# include <stdbool.h>
+# include <unistd.h>
 
 
-int isalnum(int c)
-{
-    if(c >= '0' && c <= '9' || c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z')
-        return(1);
-    return(0);
-}
+
+#endif
